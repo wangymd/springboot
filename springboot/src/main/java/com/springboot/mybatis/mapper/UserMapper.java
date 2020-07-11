@@ -25,5 +25,8 @@ public interface UserMapper {
 	//物理分页
 	@Select(" select * from user limit #{offset,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}")
 	List<User> queryUsersByPage2(@Param("offset")int offset, @Param("pageSize")int pageSize);
+	
+	@Select(" select * from user ")
+	List<User> queryUsers(@Param("id")Integer id, String name);
 
 }

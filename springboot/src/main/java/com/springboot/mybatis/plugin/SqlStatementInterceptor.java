@@ -25,10 +25,6 @@ public class SqlStatementInterceptor implements Interceptor {
             return invocation.proceed();
         } finally {
             long endTime = System.currentTimeMillis();
-//            StatementHandler statementHandler = (StatementHandler) invocation.getTarget();
-//            BoundSql boundSql = statementHandler.getBoundSql();
-//            String sql = boundSql.getSql();
-//            sql = sql.replace("\n", "").replace("\t", "").replaceAll("\\s+", " ");
             log.info("执行SQL耗时：" + (endTime - startTime) + "ms");
 
         }

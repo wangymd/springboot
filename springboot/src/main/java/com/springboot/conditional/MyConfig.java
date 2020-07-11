@@ -1,16 +1,10 @@
-package com.springboot.condition;
+package com.springboot.conditional;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-import com.springboot.condition.EncoderConvert;
-import com.springboot.condition.GBKEncoderConvert;
-import com.springboot.condition.GBKEncoderConvertCondition;
-import com.springboot.condition.UTF8EncoderConvert;
-import com.springboot.condition.UTF8EncoderConvertCondition;
-
-@Component
+@Configuration
 public class MyConfig {
 	
 	@Bean
@@ -24,5 +18,4 @@ public class MyConfig {
 	public EncoderConvert UTF8EncoderConvert() {
 		return new UTF8EncoderConvert();
 	}
-	
 }

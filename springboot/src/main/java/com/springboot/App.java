@@ -2,18 +2,16 @@ package com.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
+/**
+ * 启动过程分析
+ * @author win7
+ *
+ */
 @SpringBootApplication
-public class App
-{
-	@Bean
-	public Runnable createRunnable() {
-		return () -> {System.out.println( "springboot is running ok" );};
+public class App {
+	public static void main(String[] args) {
+		SpringApplication springApplication = new SpringApplication(App.class);
+		springApplication.run(args);
 	}
-	
-    public static void main( String[] args )
-    {
-       SpringApplication.run(App.class, args);
-    }
 }
